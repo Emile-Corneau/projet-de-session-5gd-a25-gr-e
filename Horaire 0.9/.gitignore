@@ -16,6 +16,20 @@
 *.blend1
 *.blend1.meta
 
+# OS junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Editors/IDEs
+.vscode/
+.idea/
+
+# Merge/backup noise
+*.orig
+*.rej
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/

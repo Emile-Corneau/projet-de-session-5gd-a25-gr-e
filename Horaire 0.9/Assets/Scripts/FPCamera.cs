@@ -7,7 +7,7 @@ public class FPCamera : MonoBehaviour
     [SerializeField] private Camera m_Camera;
     public float mouseSensitivity = 2f;
     public float yRotationLimit = 360f; // Prevents camera flipping
-    public float xRotationLimit = 360f;
+    public float xRotationLimit = 360f; // Drake voice: combination
 
     private float rotationX = 0f;
     private float rotationY = 0f;
