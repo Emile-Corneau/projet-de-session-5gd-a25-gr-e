@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FPCamera : MonoBehaviour
 {
     [SerializeField] private Camera m_Camera;
+
     public float mouseSensitivity = 2f;
     public float yRotationLimit = 360f; // Prevents camera flipping
     public float xRotationLimit = 360f; // Drake voice: combination
@@ -20,6 +22,7 @@ public class FPCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         rotationX += Input.GetAxis("Mouse X") * mouseSensitivity;
         rotationY += Input.GetAxis("Mouse Y") * mouseSensitivity;
 
