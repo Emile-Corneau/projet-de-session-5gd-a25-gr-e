@@ -4,74 +4,75 @@ using UnityEngine.UI;
 public class ObjectPickup : MonoBehaviour
 {
     [SerializeField] private GameObject crosshair;
+    [SerializeField] private float pickupDistance = 4f;
 
     private Outline outline;
-    private bool isPickable = false;
     private InventoryManager inventoryManager;
 
-    private GameObject obj;
-    public ItemPickupData pickup;
+    private ItemPickupData currentPickup;
+    private GameObject currentObject;
 
     private void Start()
     {
         outline = crosshair.GetComponent<Outline>();
         if (outline == null)
-        {
-            Debug.LogError("Outline component missing");
-        }
-
+            Debug.LogError("Outline component missing on crosshair.");
+        
+        //Get IM instance
         inventoryManager = InventoryManager.Instance;
     }
 
-    void Update()
+    private void Update()
     {
+        HandleRaycast();
+        HandlePickupInput();
+    }
+
+    //Method to check if rayhit is a pickable object and update current variables in accordance
+    private void HandleRaycast()
+    {
+        outline.enabled = false;
+        currentPickup = null;
+        currentObject = null;
+
         RaycastHit hit;
 
-        if (outline != null)
+        //If not object is returned within pickup distance, skip ahead
+        if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, pickupDistance))
         {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3f))
-            {
-                if (hit.collider.CompareTag("Pickable"))
-                {
-                    outline.enabled = true;
-                    isPickable = true;
-
-                    pickup = hit.collider.GetComponentInParent<ItemPickupData>();
-                    obj = hit.collider.gameObject;
-                }
-                else
-                {
-                    outline.enabled = false;
-                    isPickable = false;
-                    pickup = null;
-                    obj = null;
-                }
-            }
-            else
-            {
-                outline.enabled = false;
-                isPickable = false;
-                pickup = null;
-                obj = null;
-            }
+            return;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && isPickable)
+        //If item is not pickable, do not update current variables
+        if (!hit.collider.CompareTag("Pickable"))
         {
-            if (pickup != null)
-            {
-                if (inventoryManager.CheckInvSpace())
-                {
-                    inventoryManager.AddItem(pickup.itemData, pickup.amount);
-
-                    Destroy(obj);
-                    Debug.Log("Picked up " + pickup.itemData.item_type);
-                }
-                else
-                {
-                    Debug.Log("Inventory full!");
-                }
-            }
+            return;
         }
+
+        outline.enabled = true;
+
+        currentPickup = hit.collider.GetComponentInParent<ItemPickupData>();
+        currentObject = hit.collider.gameObject;
+    }
+
+    //Method to check for pickup input
+    private void HandlePickupInput()
+    {
+        if (!Input.GetKeyDown(KeyCode.E))
+        {
+            return;
+        }
+        if (currentPickup == null)
+        {
+            return;
+        }
+        if (!inventoryManager.CheckInvSpace())
+        {
+            Debug.Log("Inventory full!");
+            return;
+        }
+
+        inventoryManager.AddItem(currentPickup.itemData, currentPickup.amount);
+        Destroy(currentObject);
     }
 }
