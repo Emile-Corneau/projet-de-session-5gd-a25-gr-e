@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9395ce245fc1c2948b02ccda05a4bdc8, type: 3}
-  m_Name: RPotion5
+  m_Name: GPotion3
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 9f24f1a1cafeab24da46ed0f14d39b09, type: 3}
+  itemIcon: {fileID: 2800000, guid: 3b52dca193c835545a223df21b470d01, type: 3}
   item_type: 0
+  item_color: 0
+  item_size: 2
   maxStackSize: 1

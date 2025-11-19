@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4667795455171737255
+--- !u!1 &7399964067391946524
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5443875105870572573}
-  - component: {fileID: 8945094464000418744}
-  - component: {fileID: 6613442922654078834}
-  - component: {fileID: 3297366186557329577}
+  - component: {fileID: 7924686833873413542}
+  - component: {fileID: 6509389371067755011}
+  - component: {fileID: 9057029589412519625}
+  - component: {fileID: 6054938755271403747}
+  - component: {fileID: 2240041843137231104}
   m_Layer: 0
-  m_Name: Potion_3
-  m_TagString: Untagged
+  m_Name: LongHandlePotion.020
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5443875105870572573
+--- !u!4 &7924686833873413542
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4667795455171737255}
+  m_GameObject: {fileID: 7399964067391946524}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8945094464000418744
+--- !u!33 &6509389371067755011
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4667795455171737255}
-  m_Mesh: {fileID: 3434748373133766870, guid: 3578928f9d1e486459d86f2d2dbf5396, type: 3}
---- !u!23 &6613442922654078834
+  m_GameObject: {fileID: 7399964067391946524}
+  m_Mesh: {fileID: -2911870857851922412, guid: 3d6060f1ab7743a45aae952b32a0a7c1, type: 3}
+--- !u!23 &9057029589412519625
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4667795455171737255}
+  m_GameObject: {fileID: 7399964067391946524}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,11 +60,14 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -653985095331945933, guid: 3578928f9d1e486459d86f2d2dbf5396, type: 3}
-  - {fileID: 3850466104811336786, guid: 3578928f9d1e486459d86f2d2dbf5396, type: 3}
+  - {fileID: -3073190212990294086, guid: 3d6060f1ab7743a45aae952b32a0a7c1, type: 3}
+  - {fileID: 3850466104811336786, guid: 3d6060f1ab7743a45aae952b32a0a7c1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,17 +89,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3297366186557329577
+--- !u!64 &6054938755271403747
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4667795455171737255}
+  m_GameObject: {fileID: 7399964067391946524}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3434748373133766870, guid: 3578928f9d1e486459d86f2d2dbf5396, type: 3}
+  m_Mesh: {fileID: -2911870857851922412, guid: 3d6060f1ab7743a45aae952b32a0a7c1, type: 3}
+--- !u!114 &2240041843137231104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7399964067391946524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c019545194f65184fb427661370f9ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData: {fileID: 11400000, guid: 118a651bbb9814f488d32c3eb05ba4ad, type: 2}
+  amount: 1

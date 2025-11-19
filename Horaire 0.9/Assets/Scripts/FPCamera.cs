@@ -29,10 +29,10 @@ public class FPCamera : MonoBehaviour
         rotationY = Mathf.Clamp(rotationY, -yRotationLimit, yRotationLimit);
         rotationX = Mathf.Clamp(rotationX, -xRotationLimit, xRotationLimit);
 
-        // Apply horizontal rotation to the player/parent object
+        //horizontal rotationect
         transform.localRotation = Quaternion.Euler(0f, rotationX, 0f);
 
-        // Apply vertical rotation to the camera itself
+        //vertical rotation
         m_Camera.transform.localRotation = Quaternion.Euler(-rotationY, 0f, 0f);
     }
 }
