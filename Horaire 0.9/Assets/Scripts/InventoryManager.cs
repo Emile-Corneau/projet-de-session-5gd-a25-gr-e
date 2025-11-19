@@ -61,40 +61,53 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(ItemData itemData, int amount = 1)
     {
-        if (CheckInvSpace())
+        InventoryItem itemToAdd = new InventoryItem(itemData, amount);
+
+        int index = activeSlot - 1;
+
+        if (Inventory[index] == null)
         {
-            InventoryItem itemToAdd = new InventoryItem(itemData, amount);
+            Inventory[index] = itemToAdd;
+            UpdateSlotSprite(index, itemData.itemIcon);
+            return;
+        }
 
-            if (selectedItem == null)
+        for (int i = 0; i < Inventory.Length; i++)
+        {
+            if (Inventory[i] == null)
             {
-                Inventory[activeSlot - 1] = itemToAdd;
-                UpdateSlotSprite(activeSlot - 1, itemData.itemIcon);
-            }
-
-            for (int i = 0; i < Inventory.Length; i++)
-            {
-                if (Inventory[i] == null)
-                {
-                    Inventory[i] = itemToAdd;
-                    UpdateSlotSprite(i, itemData.itemIcon);
-                    break;
-                }
+                Inventory[i] = itemToAdd;
+                UpdateSlotSprite(i, itemData.itemIcon);
+                return;
             }
         }
     }
 
-    private void UpdateSlotSprite(int slotIndex, Sprite newIcon)
+    private void UpdateSlotSprite(int slotIndex, Texture newIcon)
     {
-        Image img = slotSprites[slotIndex].GetComponent<Image>();
+
+        RawImage img = slotSprites[slotIndex]?.GetComponent<RawImage>();
+
+        if (slotSprites[slotIndex] == null)
+        {
+            Debug.LogError("SlotSprite[" + slotIndex + "] is NULL — assign it in the Inspector!");
+            return;
+        }
+
+        if (img == null)
+        {
+            Debug.LogError("SlotSprite[" + slotIndex + "] has no Image component!");
+            return;
+        }
 
         if (newIcon != null)
         {
-            img.sprite = newIcon;
+            img.texture = newIcon;
             img.enabled = true;
         }
         else
         {
-            img.sprite = null;
+            img.texture = null;
             img.enabled = false;
         }
     }

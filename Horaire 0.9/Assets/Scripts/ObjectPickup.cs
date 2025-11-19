@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,14 +9,11 @@ public class ObjectPickup : MonoBehaviour
     private bool isPickable = false;
     private InventoryManager inventoryManager;
 
+    private GameObject obj;
+    public ItemPickupData pickup;
+
     private void Start()
     {
-        if (crosshair == null)
-        {
-            Debug.LogError("Crosshair GameObject not assigned");
-            return;
-        }
-
         outline = crosshair.GetComponent<Outline>();
         if (outline == null)
         {
@@ -30,36 +25,51 @@ public class ObjectPickup : MonoBehaviour
 
     void Update()
     {
+        RaycastHit hit;
+
         if (outline != null)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3f))
             {
-                if (hit.collider != null && hit.collider.CompareTag("Pickable"))
+                if (hit.collider.CompareTag("Pickable"))
                 {
-                    isPickable = true;
                     outline.enabled = true;
+                    isPickable = true;
+
+                    pickup = hit.collider.GetComponentInParent<ItemPickupData>();
+                    obj = hit.collider.gameObject;
                 }
                 else
                 {
-                    isPickable = false;
                     outline.enabled = false;
+                    isPickable = false;
+                    pickup = null;
+                    obj = null;
                 }
             }
             else
             {
-                isPickable = false;
                 outline.enabled = false;
+                isPickable = false;
+                pickup = null;
+                obj = null;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && isPickable)
         {
-            if (isPickable)
+            if (pickup != null)
             {
                 if (inventoryManager.CheckInvSpace())
                 {
-                    Debug.Log("There’s space!");
+                    inventoryManager.AddItem(pickup.itemData, pickup.amount);
+
+                    Destroy(obj);
+                    Debug.Log("Picked up " + pickup.itemData.item_type);
+                }
+                else
+                {
+                    Debug.Log("Inventory full!");
                 }
             }
         }
