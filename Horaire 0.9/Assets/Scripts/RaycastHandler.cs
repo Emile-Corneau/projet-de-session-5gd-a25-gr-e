@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
-public class ObjectPickup : MonoBehaviour
+public class RaycastHandler : MonoBehaviour
 {
     [SerializeField] private GameObject crosshair;
     [SerializeField] private float pickupDistance = 4f;
@@ -9,16 +8,15 @@ public class ObjectPickup : MonoBehaviour
     private Outline outline;
     private InventoryManager inventoryManager;
 
+    private InteractableObject currentInteract;
     private ItemPickupData currentPickup;
     private GameObject currentObject;
 
     private void Start()
     {
         outline = crosshair.GetComponent<Outline>();
-        if (outline == null)
-            Debug.LogError("Outline component missing on crosshair.");
-        
-        //Get IM instance
+        if (outline == null) Debug.LogError("Outline component missing on crosshair.");
+
         inventoryManager = InventoryManager.Instance;
     }
 
@@ -26,33 +24,38 @@ public class ObjectPickup : MonoBehaviour
     {
         HandleRaycast();
         HandlePickupInput();
+        HandleInteractInput();
     }
 
-    //Method to check if rayhit is a pickable object and update current variables in accordance
+    //Method to check the tag of a rayhit and update current variables in accordance
     private void HandleRaycast()
     {
         outline.enabled = false;
         currentPickup = null;
+        currentInteract = null;
         currentObject = null;
 
         RaycastHit hit;
 
-        //If not object is returned within pickup distance, skip ahead
         if (!Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, pickupDistance))
+            return;
+
+        // check if rayhit is a pickable
+        if (hit.collider.CompareTag("Pickable"))
         {
+            outline.enabled = true;
+            currentPickup = hit.collider.GetComponentInParent<ItemPickupData>();
+            currentObject = hit.collider.gameObject;
             return;
         }
 
-        //If item is not pickable, do not update current variables
-        if (!hit.collider.CompareTag("Pickable"))
+        // check if rayhit is an Interactable
+        if (hit.collider.CompareTag("Interactable"))
         {
+            outline.enabled = true; 
+            currentInteract = hit.collider.GetComponentInParent<InteractableObject>();
             return;
         }
-
-        outline.enabled = true;
-
-        currentPickup = hit.collider.GetComponentInParent<ItemPickupData>();
-        currentObject = hit.collider.gameObject;
     }
 
     //Method to check for pickup input
@@ -62,10 +65,12 @@ public class ObjectPickup : MonoBehaviour
         {
             return;
         }
+
         if (currentPickup == null)
         {
             return;
         }
+
         if (!inventoryManager.CheckInvSpace())
         {
             Debug.Log("Inventory full!");
@@ -74,5 +79,21 @@ public class ObjectPickup : MonoBehaviour
 
         inventoryManager.AddItem(currentPickup.itemData, currentPickup.amount);
         Destroy(currentObject);
+    }
+
+    //Method to check for interact input
+    private void HandleInteractInput()
+    {
+        if (!Input.GetKeyDown(KeyCode.F))
+        {
+            return;
+        }
+
+        if (currentInteract == null)
+        {
+            return;
+        }
+
+        currentInteract.Activate();
     }
 }
