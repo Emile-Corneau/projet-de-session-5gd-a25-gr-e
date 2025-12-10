@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
+  m_Name: RedS
+  m_EditorClassIdentifier: 
+  Name: Healing
+  ingredients:
+  - {fileID: 21300000, guid: aa6e0426b79ced341b4ae119ecadbd2a, type: 3}
+  - {fileID: 21300000, guid: bd11b6770f09979439badf068d9088e5, type: 3}
+  - {fileID: 21300000, guid: 2516a994417804d428158b1392598228, type: 3}
+  result: {fileID: 21300000, guid: e46f7e14f12e3524cb01afeab59aa811, type: 3}

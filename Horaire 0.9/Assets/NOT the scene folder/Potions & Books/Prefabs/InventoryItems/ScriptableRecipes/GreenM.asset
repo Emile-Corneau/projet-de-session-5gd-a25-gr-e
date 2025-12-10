@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
+  m_Name: GreenM
+  m_EditorClassIdentifier: 
+  Name: Resist
+  ingredients:
+  - {fileID: 21300000, guid: f80ca96fd0d85694cbe69d6d2c690c77, type: 3}
+  - {fileID: 21300000, guid: b64415f1565e8e74d9802bfe856a4828, type: 3}
+  - {fileID: 21300000, guid: 4c4e002daa576d44b8db7c382bd7b955, type: 3}
+  result: {fileID: 21300000, guid: d45336b90c00a624a81b428fd1180119, type: 3}

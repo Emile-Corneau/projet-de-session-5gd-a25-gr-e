@@ -22,18 +22,25 @@ public class FPCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+        else
+        {
 
-        rotationX += Input.GetAxis("Mouse X") * mouseSensitivity;
-        rotationY += Input.GetAxis("Mouse Y") * mouseSensitivity;
+            rotationX += Input.GetAxis("Mouse X") * mouseSensitivity;
+            rotationY += Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        rotationY = Mathf.Clamp(rotationY, -yRotationLimit, yRotationLimit);
-        rotationX = Mathf.Clamp(rotationX, -xRotationLimit, xRotationLimit);
+            rotationY = Mathf.Clamp(rotationY, -yRotationLimit, yRotationLimit);
+            rotationX = Mathf.Clamp(rotationX, -xRotationLimit, xRotationLimit);
 
-        //horizontal rotationect
-        transform.localRotation = Quaternion.Euler(0f, rotationX, 0f);
+            //horizontal rotationect
+            transform.localRotation = Quaternion.Euler(0f, rotationX, 0f);
 
-        //vertical rotation
-        m_Camera.transform.localRotation = Quaternion.Euler(-rotationY, 0f, 0f);
+            //vertical rotation
+            m_Camera.transform.localRotation = Quaternion.Euler(-rotationY, 0f, 0f);
+        }
     }
 }
 
