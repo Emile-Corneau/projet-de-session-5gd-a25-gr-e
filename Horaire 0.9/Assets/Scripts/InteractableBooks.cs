@@ -4,9 +4,8 @@ public class InteractableBooks : InteractableObject
 {
     [SerializeField] GameObject RecipeUI;
 
-    public override void Activate()
+    public override void Activate(InventoryItem selectedItem)
     {
-        Debug.Log("Books interacted with");
 
         RecipeUI.SetActive(true);
 

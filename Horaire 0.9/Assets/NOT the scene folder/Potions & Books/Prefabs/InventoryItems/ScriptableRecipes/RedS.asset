@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
   m_Name: RedS
   m_EditorClassIdentifier: 
-  Name: Healing
-  ingredients:
+  recipeName: Muscle
+  ingredientSprites:
   - {fileID: 21300000, guid: aa6e0426b79ced341b4ae119ecadbd2a, type: 3}
-  - {fileID: 21300000, guid: bd11b6770f09979439badf068d9088e5, type: 3}
-  - {fileID: 21300000, guid: 2516a994417804d428158b1392598228, type: 3}
+  - {fileID: 21300000, guid: 640eac4ceeed3b64e8121514f040c6ac, type: 3}
+  - {fileID: 21300000, guid: a89b4f8fe3c45634bac065191aaaf320, type: 3}
   result: {fileID: 21300000, guid: e46f7e14f12e3524cb01afeab59aa811, type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: bec136ea13cf7d146ba1903044dbf086, type: 2}
+  - {fileID: 11400000, guid: d675df0eeb0393b4fb7943e6f3797568, type: 2}
+  - {fileID: 11400000, guid: 0675c25e198fdea42ac55cbaa37a67f6, type: 2}

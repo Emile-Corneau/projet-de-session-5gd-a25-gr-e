@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
   m_Name: SquareS
   m_EditorClassIdentifier: 
-  Name: Swiftness
-  ingredients:
-  - {fileID: 21300000, guid: 46f283cfc3d92174fb6825ff750c51b5, type: 3}
+  recipeName: Shield
+  ingredientSprites:
+  - {fileID: 21300000, guid: bd11b6770f09979439badf068d9088e5, type: 3}
   - {fileID: 21300000, guid: 6f61caa49a8b6464aa5165baf26ef67e, type: 3}
-  - {fileID: 21300000, guid: aa6e0426b79ced341b4ae119ecadbd2a, type: 3}
+  - {fileID: 21300000, guid: 2516a994417804d428158b1392598228, type: 3}
   result: {fileID: 21300000, guid: 16b2a1b4425654b4bb0db2e73c272628, type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: 0472d8f9d2e55674cbc32695f3cb2ea4, type: 2}
+  - {fileID: 11400000, guid: 8a5be64ba6eaef041b5d4436d45c68c1, type: 2}
+  - {fileID: 11400000, guid: 37475f2e81d89a64e8a7b6417a63f35c, type: 2}

@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class InteractableObject : MonoBehaviour
 {
-    public abstract void Activate();
+    public abstract void Activate(InventoryItem selectedItem);
 }

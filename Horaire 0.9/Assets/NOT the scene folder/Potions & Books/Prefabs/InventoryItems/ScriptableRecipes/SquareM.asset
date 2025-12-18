@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
   m_Name: SquareM
   m_EditorClassIdentifier: 
-  Name: Focus
-  ingredients:
-  - {fileID: 21300000, guid: 46f283cfc3d92174fb6825ff750c51b5, type: 3}
+  recipeName: Guard
+  ingredientSprites:
+  - {fileID: 21300000, guid: bd11b6770f09979439badf068d9088e5, type: 3}
   - {fileID: 21300000, guid: 6f61caa49a8b6464aa5165baf26ef67e, type: 3}
   - {fileID: 21300000, guid: 4199b343d4bd90f488515b2c07339ad1, type: 3}
   result: {fileID: 21300000, guid: d01e8a42207aed94dbad2a7870be5465, type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: 0472d8f9d2e55674cbc32695f3cb2ea4, type: 2}
+  - {fileID: 11400000, guid: 8a5be64ba6eaef041b5d4436d45c68c1, type: 2}
+  - {fileID: 11400000, guid: 8124cff0fbe070047b1490b86e02e353, type: 2}

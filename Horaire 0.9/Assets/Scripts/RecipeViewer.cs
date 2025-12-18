@@ -35,16 +35,25 @@ public class RecipeViewer : MonoBehaviour
         ShowRecipe(currentIndex);
     }
 
+    public void CloseRecipes() 
+    {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        gameObject.SetActive(false);
+    }
+
     private void ShowRecipe(int index)
     {
         Recipe recipe = recipes[index];
 
         for (int i = 0; i < ingredientSlots.Length; i++)
         {
-            ingredientSlots[i].sprite = recipe.ingredients[i];
+            ingredientSlots[i].sprite = recipe.ingredientSprites[i];
         }
 
         resultSlot.sprite = recipe.result;
-        text.text = recipe.Name;
+        text.text = recipe.recipeName;
     }
 }

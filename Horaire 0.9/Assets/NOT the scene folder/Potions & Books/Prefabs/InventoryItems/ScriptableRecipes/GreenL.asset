@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
   m_Name: GreenL
   m_EditorClassIdentifier: 
-  Name: Fortify
-  ingredients:
-  - {fileID: 21300000, guid: f80ca96fd0d85694cbe69d6d2c690c77, type: 3}
-  - {fileID: 21300000, guid: b64415f1565e8e74d9802bfe856a4828, type: 3}
+  recipeName: Cure
+  ingredientSprites:
   - {fileID: 21300000, guid: 7c72df792e2526c43a1c0a20f1954e28, type: 3}
+  - {fileID: 21300000, guid: 2516a994417804d428158b1392598228, type: 3}
+  - {fileID: 21300000, guid: 5051cf2c481b61043804ad5cc78f04f9, type: 3}
   result: {fileID: 21300000, guid: 3b52dca193c835545a223df21b470d01, type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: d2db68fb34ddf534da99db874a085377, type: 2}
+  - {fileID: 11400000, guid: 37475f2e81d89a64e8a7b6417a63f35c, type: 2}
+  - {fileID: 11400000, guid: 08d32e2c51c974a48b62a79f0188a537, type: 2}

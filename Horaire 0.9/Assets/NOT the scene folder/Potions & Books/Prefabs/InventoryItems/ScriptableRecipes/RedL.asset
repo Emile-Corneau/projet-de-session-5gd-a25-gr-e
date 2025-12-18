@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
   m_Name: RedL
   m_EditorClassIdentifier: 
-  Name: Revive
-  ingredients:
+  recipeName: Power
+  ingredientSprites:
   - {fileID: 21300000, guid: aa6e0426b79ced341b4ae119ecadbd2a, type: 3}
-  - {fileID: 21300000, guid: bd11b6770f09979439badf068d9088e5, type: 3}
-  - {fileID: 21300000, guid: 1b5b811e963d3a74dabfad8ef2d2321b, type: 3}
+  - {fileID: 21300000, guid: 640eac4ceeed3b64e8121514f040c6ac, type: 3}
+  - {fileID: 21300000, guid: 46f283cfc3d92174fb6825ff750c51b5, type: 3}
   result: {fileID: 21300000, guid: 5494587bfda1148458daf72a91ae6ec0, type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: bec136ea13cf7d146ba1903044dbf086, type: 2}
+  - {fileID: 11400000, guid: d675df0eeb0393b4fb7943e6f3797568, type: 2}
+  - {fileID: 11400000, guid: c68e0f6cce6e8c545b743ce5decff134, type: 2}

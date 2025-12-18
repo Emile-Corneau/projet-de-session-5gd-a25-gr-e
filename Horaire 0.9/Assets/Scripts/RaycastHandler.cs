@@ -94,6 +94,6 @@ public class RaycastHandler : MonoBehaviour
             return;
         }
 
-        currentInteract.Activate();
+        currentInteract.Activate(inventoryManager.selectedItem);
     }
 }

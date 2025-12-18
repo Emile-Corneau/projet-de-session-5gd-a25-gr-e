@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
   m_Name: PurpleL
   m_EditorClassIdentifier: 
-  Name: Invisibility
-  ingredients:
+  recipeName: Brainpower
+  ingredientSprites:
   - {fileID: 21300000, guid: 5051cf2c481b61043804ad5cc78f04f9, type: 3}
-  - {fileID: 21300000, guid: 6d2efcbc69a409c43a96c1b42ef411dd, type: 3}
+  - {fileID: 21300000, guid: b64415f1565e8e74d9802bfe856a4828, type: 3}
   - {fileID: 21300000, guid: 640eac4ceeed3b64e8121514f040c6ac, type: 3}
   result: {fileID: 21300000, guid: 40db60c240cece24cbb4fa0c082f1399, type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: 08d32e2c51c974a48b62a79f0188a537, type: 2}
+  - {fileID: 11400000, guid: 48b69a8e1d4265340854342148c6f41a, type: 2}
+  - {fileID: 11400000, guid: d675df0eeb0393b4fb7943e6f3797568, type: 2}

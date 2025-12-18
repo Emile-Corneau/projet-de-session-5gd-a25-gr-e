@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject[] slotSprites;
 
     private int activeSlot = 1;
-    private InventoryItem selectedItem = null;
+    public InventoryItem selectedItem = null;
 
     void Awake()
     {

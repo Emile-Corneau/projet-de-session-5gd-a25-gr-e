@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d609cee9e7a5c245b06319cf22b8949, type: 3}
   m_Name: PurpleS
   m_EditorClassIdentifier: 
-  Name: Charm
-  ingredients:
+  recipeName: Focus
+  ingredientSprites:
   - {fileID: 21300000, guid: 5051cf2c481b61043804ad5cc78f04f9, type: 3}
-  - {fileID: 21300000, guid: 6d2efcbc69a409c43a96c1b42ef411dd, type: 3}
-  - {fileID: 21300000, guid: b78aa7185ad3b2e42a805c3be080fa60, type: 3}
+  - {fileID: 21300000, guid: b64415f1565e8e74d9802bfe856a4828, type: 3}
+  - {fileID: 21300000, guid: f80ca96fd0d85694cbe69d6d2c690c77, type: 3}
   result: {fileID: 21300000, guid: c68f21cb88102474c9612b2d3446c5f3, type: 3}
+  ingredients:
+  - {fileID: 11400000, guid: 08d32e2c51c974a48b62a79f0188a537, type: 2}
+  - {fileID: 11400000, guid: 48b69a8e1d4265340854342148c6f41a, type: 2}
+  - {fileID: 11400000, guid: 31289596119488242a1e4fefa3cbee88, type: 2}
